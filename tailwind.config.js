@@ -12,15 +12,23 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
+        'main-green': '#92C7AB',
+        'light-green': '#D4FFE8',
+        'hover-green': '#4D7A62',
+        'brown': '#7A6D53',
+        'lbrown': '#C7AD7D'
       },
       spacing: {
         28: '7rem',
       },
       letterSpacing: {
-        tighter: '-.04em',
+        tighter: '-.02em',
       },
       lineHeight: {
         tight: 1.2,
+      },
+      fontFamily: {
+        lato: "'Lato', sans-serif",
       },
       fontSize: {
         '5xl': '2.5rem',
@@ -31,6 +39,12 @@ module.exports = {
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+      },
+      height: {
+        fullscreen: '100%'
+      },
+      width: {
+        extended: '80%'
       },
     },
   },
