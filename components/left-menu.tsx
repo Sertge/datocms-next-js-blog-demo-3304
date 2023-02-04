@@ -1,16 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { PostType } from "public/types/common";
 
-type Post = {
-  title: string
-  coverImage: string
-  date: Date
-  author: string
-  slug: string
-}
-
-export default function LeftMenu ({allPosts}: {allPosts: Post[]}) {
+export default function LeftMenu ({allPosts}: {allPosts: PostType[]}) {
   allPosts.splice(3)
   const router = useRouter()
   console.log(router.pathname)

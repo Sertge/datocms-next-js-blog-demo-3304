@@ -1,7 +1,6 @@
 import LeftMenu from "../components/left-menu";
 import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
-import Intro from '@/components/intro'
 import Container from "@/components/container"
 import Layout from "@/components/layout"
 import { HamburgerMenu } from "@/components/hamburger";
@@ -16,7 +15,7 @@ export default function TestPage({ allPosts }) {
   const toggleLeftMenu = () => setIsOpenLeftMenu(!isOpenLeftMenu)
   return (
     <>
-      <Layout preview={false}>
+      <Layout>
         <Head>
           <title>Test page for new components</title>
         </Head>
@@ -25,7 +24,6 @@ export default function TestPage({ allPosts }) {
         </div>
         {isOpenLeftMenu && <LeftMenu allPosts={allPosts} />}
         <Container>
-          <Intro />
             {heroPost && (
               <HeroPost
                 title={heroPost.title}
