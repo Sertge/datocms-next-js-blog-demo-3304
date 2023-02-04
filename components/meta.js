@@ -28,6 +28,9 @@ export default function Meta() {
         color="#000000"
       />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin= '' />
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
