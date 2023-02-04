@@ -18,7 +18,7 @@ const responsiveImageFragment = `
   }
 `
 
-async function fetchAPI(query, { variables, preview } = {}) {
+async function fetchAPI(query: string, { variables, preview }: { variables?: { slug: string }, preview?: boolean } = {}) {
   const res = await fetch(API_URL + (preview ? '/preview' : ''), {
     method: 'POST',
     headers: {
