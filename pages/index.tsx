@@ -19,7 +19,7 @@ export default function TestPage({ allPosts }) {
         <Head>
           <title>Test page for new components</title>
         </Head>
-        <div className="top-0 px-2 absolute mx-0 inline-flex align-middle bg-main-green w-full h-12">
+        <div className="top-0 px-2 absolute mx-0 inline-flex align-middle bg-main-green w-full h-12 z-20">
           <HamburgerMenu onClick={toggleLeftMenu}/> <p className="text-4xl pl-2 text-brown font-bold">Cocina con Ale</p>
         </div>
         {isOpenLeftMenu && <LeftMenu allPosts={allPosts} />}
