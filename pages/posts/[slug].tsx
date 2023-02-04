@@ -16,7 +16,6 @@ import { PostType } from 'public/types/common'
 
 export default function Post({ post, morePosts, preview }: {post: PostType, morePosts: PostType[], preview: boolean}) {
   const router = useRouter()
-  console.log(post)
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
