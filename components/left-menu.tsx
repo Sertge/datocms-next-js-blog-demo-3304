@@ -10,6 +10,7 @@ export default function LeftMenu ({allPosts}: {allPosts: PostType[]}) {
   return (
   <aside className={"width-extended bg-main-green font-lato text-brown justify-center text-xl px-2 top-12 absolute h-full z-20"}>
     <div>
+      <div><Link href="/">Página principal</Link></div>
       <div>Publicaciones Recientes</div>
       <div className="px-4">
         {allPosts.map((post) => {

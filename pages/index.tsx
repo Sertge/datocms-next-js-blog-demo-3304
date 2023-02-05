@@ -1,4 +1,4 @@
-import LeftMenu from "../components/left-menu";
+import LeftMenu from "@/components/left-menu";
 import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
 import Container from "@/components/container"
@@ -17,7 +17,7 @@ export default function TestPage({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>Test page for new components</title>
+          <title>Cocina con Ale</title>
         </Head>
         <div className="top-0 px-2 absolute mx-0 inline-flex align-middle bg-main-green w-full h-12 z-20">
           <HamburgerMenu onClick={toggleLeftMenu}/> <p className="text-4xl pl-2 text-brown font-bold">Cocina con Ale</p>
