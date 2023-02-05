@@ -1,16 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { PostType } from "public/types/common";
 
-type Post = {
-  title: string
-  coverImage: string
-  date: Date
-  author: string
-  slug: string
-}
-
-export default function LeftMenu ({allPosts}: {allPosts: Post[]}) {
+export default function LeftMenu ({allPosts}: {allPosts: PostType[]}) {
   allPosts.splice(3)
   const router = useRouter()
   console.log(router.pathname)
@@ -21,7 +14,7 @@ export default function LeftMenu ({allPosts}: {allPosts: Post[]}) {
       <div className="px-4">
         {allPosts.map((post) => {
           return (
-            <div className="hover:bg-hover-green hover:text-lbrown rounded-md ">
+            <div key={post.slug} className="hover:bg-hover-green hover:text-lbrown rounded-md ">
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </div>
           )

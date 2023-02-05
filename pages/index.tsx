@@ -1,7 +1,6 @@
 import LeftMenu from "../components/left-menu";
 import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
-import Intro from '@/components/intro'
 import Container from "@/components/container"
 import Layout from "@/components/layout"
 import { HamburgerMenu } from "@/components/hamburger";
@@ -16,16 +15,15 @@ export default function TestPage({ allPosts }) {
   const toggleLeftMenu = () => setIsOpenLeftMenu(!isOpenLeftMenu)
   return (
     <>
-      <Layout preview={false}>
+      <Layout>
         <Head>
           <title>Test page for new components</title>
         </Head>
-        <div className="top-0 px-2 absolute mx-0 inline-flex align-middle bg-main-green w-full h-12">
+        <div className="top-0 px-2 absolute mx-0 inline-flex align-middle bg-main-green w-full h-12 z-20">
           <HamburgerMenu onClick={toggleLeftMenu}/> <p className="text-4xl pl-2 text-brown font-bold">Cocina con Ale</p>
         </div>
         {isOpenLeftMenu && <LeftMenu allPosts={allPosts} />}
         <Container>
-          <Intro />
             {heroPost && (
               <HeroPost
                 title={heroPost.title}
