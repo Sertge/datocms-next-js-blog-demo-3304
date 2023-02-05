@@ -14,7 +14,7 @@ export default function LeftMenu ({allPosts}: {allPosts: PostType[]}) {
       <div className="px-4">
         {allPosts.map((post) => {
           return (
-            <div className="hover:bg-hover-green hover:text-lbrown rounded-md ">
+            <div key={post.slug} className="hover:bg-hover-green hover:text-lbrown rounded-md ">
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </div>
           )
