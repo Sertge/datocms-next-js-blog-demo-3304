@@ -25,8 +25,8 @@ export default function LeftMenu ({allPosts}: {allPosts: PostType[]}) {
     </div>
     <div className="py-4 space-y-2">
       <div className="font-bold">Otras utilidades</div>
-      <div className="px-4">
-        <div className="hover:bg-azure hover:text-indigo hover:border-b-indigo hover:border-b-2 rounded-md">Utilidad de costos</div>
+      <div className="hover:bg-azure hover:text-indigo hover:border-b-indigo hover:border-b-2 rounded-md px-4">
+        <Link href="/">Utilidad de costos</Link>
       </div>
     </div>
   </ aside>)

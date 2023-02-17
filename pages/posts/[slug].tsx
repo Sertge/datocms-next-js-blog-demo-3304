@@ -15,7 +15,7 @@ import { Header } from '@/components/header'
 
 export default function Post({ post, morePosts, preview }: {post: PostType, morePosts: PostType[], preview: boolean}) {
   const router = useRouter()
-  const allPosts = [post, morePosts] as PostType[]
+  const allPosts = [post, ...morePosts].splice(0, 3) as PostType[]
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
