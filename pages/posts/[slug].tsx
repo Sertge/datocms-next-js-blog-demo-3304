@@ -13,7 +13,7 @@ import markdownToHtml from '@/lib/markdownToHtml'
 import { PostType } from 'public/types/common'
 import { Header } from '@/components/header'
 
-export default function Post({ post, morePosts, preview }: {post: PostType, morePosts: PostType[], preview: boolean}) {
+export default function Post({ post, morePosts= [], preview }: {post: PostType, morePosts: PostType[], preview: boolean}) {
   const router = useRouter()
   const allPosts = [post, ...morePosts].splice(0, 3) as PostType[]
   if (!router.isFallback && !post?.slug) {
