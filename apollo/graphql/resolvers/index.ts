@@ -1,1 +1,1 @@
-export { Mutation } from './Mutation/Mutation'
+export { Mutation } from './Mutation'
