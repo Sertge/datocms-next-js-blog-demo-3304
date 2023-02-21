@@ -1,3 +1,14 @@
-import fs from "fs";
+import { readFileSync} from 'fs'
+import { Glob } from 'glob'
 
-export const readSchemas = fs.readFileSync('./*.gql').join('\n')
+function readSchemas(): string {
+  let schemas: string
+  const foundSchemas = new Glob(
+    './apollo/graphql/schemas/*.gql',
+    {sync:true}
+  ).found
+  schemas = foundSchemas.map((gqlSchema: string) => readFileSync(gqlSchema)).join('\n')
+  return schemas
+}
+
+export default readSchemas

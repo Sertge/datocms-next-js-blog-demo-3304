@@ -16,6 +16,7 @@
     "cookie": "^0.5.0",
     "date-fns": "2.28.0",
     "deepmerge": "^4.3.0",
+    "glob": "^8.1.0",
     "graphql": "^16.6.0",
     "next": "latest",
     "react": "^18.2.0",
@@ -29,6 +30,7 @@
     "typeorm-naming-strategies": "^4.1.0"
   },
   "devDependencies": {
+    "@types/glob": "^8.0.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "autoprefixer": "10.4.2",
