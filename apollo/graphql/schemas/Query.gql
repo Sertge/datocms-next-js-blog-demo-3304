@@ -1,3 +1,5 @@
 type Query {
-  me: String
+  # me: User
+  listUsers: [User]
+  getUserById(id: String): User
 }
