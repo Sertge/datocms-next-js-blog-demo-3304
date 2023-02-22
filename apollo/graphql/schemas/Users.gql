@@ -1,0 +1,10 @@
+interface User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+}
+
+input CreateUserInput{
+  firstName: String!
+  lastName: String!
+}

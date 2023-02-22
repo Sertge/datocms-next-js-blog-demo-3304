@@ -1,12 +1,19 @@
-import Link from 'next/link'
+import LeftMenu from "@/components/left-menu";
+import { useState } from "react";
+import { FaHamburger } from 'react-icons/fa'
+import Link from "next/link";
 
-export default function Header() {
+export const Header = ({ allPosts }) => {
+  const [ isOpenLeftMenu, setIsOpenLeftMenu ] = useState(false)
+  const toggleLeftMenu = () => setIsOpenLeftMenu(!isOpenLeftMenu)
   return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <Link href="/" className="hover:underline">
-        Blog
-      </Link>
-      .
-    </h2>
+    <>
+      <div className="top-0 text-4xl px-2 sticky mx-0 inline-flex align-middle bg-main-green w-full h-12 z-20">
+        <div onClick={toggleLeftMenu}>
+        <FaHamburger className="pt-2 text-azure cursor-pointer"/>
+        </div> <Link href='/' className="pl-2 text-azure font-bold">Cocina con Ale</Link>
+      </div>
+      {isOpenLeftMenu && <LeftMenu allPosts={allPosts} />}
+    </>
   )
 }

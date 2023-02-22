@@ -12,11 +12,14 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
-        'main-green': '#92C7AB',
-        'light-green': '#D4FFE8',
+        'main-green': '#517664',
+        'light-green': '#9FD8CB',
         'hover-green': '#4D7A62',
-        'brown': '#7A6D53',
-        'lbrown': '#C7AD7D'
+        'brown': '#2D3319',
+        'lbrown': '#C7AD7D',
+        'azure': '#D6E5E3',
+        'french-gray': '#CACFD6',
+        'indigo': '#EFAD02'
       },
       spacing: {
         28: '7rem',
@@ -44,8 +47,21 @@ module.exports = {
         fullscreen: '100%'
       },
       width: {
-        extended: '80%'
+        extended: '40vw'
       },
+      keyframes: {slide: {
+        '0%': {
+          transform: 'translateX(-100%)'
+          // animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        },
+        '100%': {
+          transform: 'translateX(0)'
+          // animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }},
+      animation: {
+        'slide-in': 'slide 0.5s ease-in-out'
+      }
     },
   },
   plugins: [],
