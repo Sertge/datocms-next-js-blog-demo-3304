@@ -1,5 +1,14 @@
+type Mutation {
+  createUser(input: CreateUserInput): User @resolver
+}
+type Query {
+  me: User
+  listUsers: [User]
+  getUserById(id: ID!): User
+}
 type User {
   id: ID!
+  email: String!
   firstName: String!
   lastName: String!
 }
