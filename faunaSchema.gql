@@ -1,19 +1,19 @@
 type Mutation {
-  createUser(input: CreateUserInput): User @resolver
+  createUser(input: UserInput!): User @resolver
 }
 type Query {
   me: User
-  listUsers: [User]
+  listUsers: [User!]
   getUserById(id: ID!): User
 }
 type User {
   id: ID!
-  email: String!
   firstName: String!
   lastName: String!
+  email: String!
 }
 
-input CreateUserInput{
+input UserInput {
   email: String!
   firstName: String!
   lastName: String!
