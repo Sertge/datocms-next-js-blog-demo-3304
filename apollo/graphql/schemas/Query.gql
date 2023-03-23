@@ -1,5 +1,7 @@
 type Query {
   me: User
-  listUsers: [User!]
+  listUser: [User!]
   getUserById(id: ID!): User
+  listRecipe: [Recipe!]
+  listIngredient: [Ingredient!]
 }

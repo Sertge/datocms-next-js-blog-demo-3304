@@ -1,11 +1,67 @@
+type IngredientAmount {
+  ingredient: Ingredient!
+  amount: Int!
+  unitMeasure: UnitOfMeasurement!
+  recipe: Recipe!
+}
+
+input IngredientAmountInput {
+  ingredient: ID!
+  amount: Int!
+  unitMeasure: UnitOfMeasurement!
+  recipe: ID!
+}
+
+type Ingredient @generateUDFResolvers{
+  id: ID!
+  name: String!
+  unitPrice: Int!
+  unitAmount: Int!
+  lossPercent: Int!
+  unitMeasure: UnitOfMeasurement!
+}
+
+enum UnitOfMeasurement {
+  KILOGRAM
+  POUND
+  LITER
+  GRAM
+}
+
 type Mutation {
   createUser(input: UserInput!): User @resolver
+  createIngredient(input: IngredientInput!): Ingredient @resolver
+  updateIngredient(id: ID!, input: IngredientInput): Ingredient @resolver
+  createIngredientAmount(input: IngredientAmountInput!): IngredientAmount @resolver
+  updateIngredientAmount(id: ID!, input: IngredientAmountInput!): IngredientAmount @resolver
+  createRecipe(input: RecipeInput!): Recipe @resolver
+  updateRecipe(id: ID!, input: RecipeInput!): Recipe @resolver
+  addIngredientToRecipe(recipeId: ID!, ingredientId: ID!): Recipe @resolver
 }
+
 type Query {
   me: User
-  listUsers: [User!]
+  listUser: [User!]
   getUserById(id: ID!): User
+  listRecipe: [Recipe!]
+  listIngredient: [Ingredient!]
 }
+
+type Recipe {
+  id: ID!
+  user: User!
+  name: String!
+  ingredientAmounts: [IngredientAmount!]
+}
+
+input RecipeInput {
+  name: String!
+}
+
+input AddIngredientAmountInput {
+  ingredientAmount: ID!
+}
+
 type User {
   id: ID!
   firstName: String!

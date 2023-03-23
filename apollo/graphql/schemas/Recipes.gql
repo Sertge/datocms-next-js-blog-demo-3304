@@ -1,0 +1,14 @@
+type Recipe {
+  id: ID!
+  user: User!
+  name: String!
+  ingredientAmounts: [IngredientAmount!]
+}
+
+input RecipeInput {
+  name: String!
+}
+
+input AddIngredientAmountInput {
+  ingredientAmount: ID!
+}

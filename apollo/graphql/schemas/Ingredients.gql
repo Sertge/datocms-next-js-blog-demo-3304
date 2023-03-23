@@ -1,0 +1,15 @@
+type Ingredient @generateUDFResolvers{
+  id: ID!
+  name: String!
+  unitPrice: Int!
+  unitAmount: Int!
+  lossPercent: Int!
+  unitMeasure: UnitOfMeasurement!
+}
+
+enum UnitOfMeasurement {
+  KILOGRAM
+  POUND
+  LITER
+  GRAM
+}
