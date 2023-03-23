@@ -1,0 +1,13 @@
+type IngredientAmount {
+  ingredient: Ingredient!
+  amount: Int!
+  unitMeasure: UnitOfMeasurement!
+  recipe: Recipe!
+}
+
+input IngredientAmountInput {
+  ingredient: ID!
+  amount: Int!
+  unitMeasure: UnitOfMeasurement!
+  recipe: ID!
+}

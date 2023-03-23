@@ -1,3 +1,10 @@
 type Mutation {
   createUser(input: UserInput!): User @resolver
+  createIngredient(input: IngredientInput!): Ingredient @resolver
+  updateIngredient(id: ID!, input: IngredientInput): Ingredient @resolver
+  createIngredientAmount(input: IngredientAmountInput!): IngredientAmount @resolver
+  updateIngredientAmount(id: ID!, input: IngredientAmountInput!): IngredientAmount @resolver
+  createRecipe(input: RecipeInput!): Recipe @resolver
+  updateRecipe(id: ID!, input: RecipeInput!): Recipe @resolver
+  addIngredientToRecipe(recipeId: ID!, ingredientId: ID!): Recipe @resolver
 }
