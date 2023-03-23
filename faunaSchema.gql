@@ -1,3 +1,11 @@
+type Mutation {
+  createUser(input: UserInput!): User @resolver
+}
+type Query {
+  me: User
+  listUsers: [User!]
+  getUserById(id: ID!): User
+}
 type User {
   id: ID!
   firstName: String!
