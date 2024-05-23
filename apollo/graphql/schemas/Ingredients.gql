@@ -1,3 +1,4 @@
+directive @generateUDFResolvers on FIELD_DEFINITION | OBJECT
 type Ingredient @generateUDFResolvers{
   id: ID!
   name: String!
@@ -12,4 +13,10 @@ enum UnitOfMeasurement {
   POUND
   LITER
   GRAM
+}
+
+input IngredientInput {
+  ingredient: ID!
+  unitMeasure: UnitOfMeasurement!
+  price: Float!
 }
