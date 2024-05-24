@@ -1,6 +1,10 @@
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { GraphQLSchema } from 'graphql'
 import readSchemas from './schemas'
-import { Mutation } from './resolvers'
+import { Mutation, Query } from './resolvers'
+import datasource from 'config/db/datasources/postgres'
+import { DataSource } from 'typeorm'
+import Container from 'typedi'
 
-export const schema: GraphQLSchema = makeExecutableSchema({ typeDefs: readSchemas(), resolvers: { Mutation } })
+Container.set(DataSource.name, datasource)
+export const schema: GraphQLSchema = makeExecutableSchema({ typeDefs: readSchemas(), resolvers: { Mutation, Query } })

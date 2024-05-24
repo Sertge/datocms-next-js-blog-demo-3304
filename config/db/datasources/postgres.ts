@@ -1,5 +1,4 @@
 import path from 'path'
-import Container from 'typedi'
 import { DataSource } from 'typeorm'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 
@@ -9,12 +8,11 @@ const datasource = new DataSource({
   migrationsRun: true,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
-  migrations: [path.join(__dirname, '../migrations/*.[jt]s')],
+  database: 'cocina_con_ale',
+  migrations: ['config/db/migrations/*.[jt]s'],
   namingStrategy: new SnakeNamingStrategy(),
-  entities: [path.join(__dirname, '../../../domain/**/*.[jt]s')],
+  entities: ['domain/**/*.[jt]s'],
   logging: ['query', 'migration', 'error']
 })
-
-Container.set(DataSource.name, datasource)
 
 export default datasource

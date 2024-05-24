@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { readFileSync, writeFileSync} from 'fs'
 import glob from 'glob'
+import dotenv from 'dotenv'
 
+dotenv.config()
 function readSchemas() {
   const foundSchemas = new glob.Glob(
     './apollo/graphql/schemas/*.gql',
@@ -14,11 +16,11 @@ function readSchemas() {
 function exportSchemasToFauna() {
   const schemas = readSchemas()
   writeFileSync('./faunaSchema.gql', schemas)
-  // axios.post(
-  //   process.env.FAUNA_IMPORT_URL,
-  //   { body: { schemas }},
-  //   { auth: { username: process.env.FAUNA_SECRET }}
-  // ).then((res) => console.log(res))
+  axios.post(
+    process.env.FAUNA_IMPORT_URL,
+    { body: { schemas }},
+    { auth: { username: process.env.FAUNA_SECRET }}
+  ).then((res) => console.log(res))
 }
 
 exportSchemasToFauna()

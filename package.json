@@ -6,7 +6,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "fauna:export": "node --experimental-modules faunadb.mjs"
+    "fauna:export": "node --experimental-modules faunadb.mjs",
+    "migration:create": "typeorm migration:create"
   },
   "dependencies": {
     "@apollo/server": "^4.3.3",
@@ -20,6 +21,7 @@
     "glob": "^8.1.0",
     "graphql": "^16.6.0",
     "next": "latest",
+    "pg": "^8.11.5",
     "react": "^18.2.0",
     "react-datocms": "^4.0.8",
     "react-dom": "^18.2.0",
@@ -27,7 +29,7 @@
     "remark": "14.0.2",
     "remark-html": "15.0.1",
     "typedi": "^0.10.0",
-    "typeorm": "^0.3.12",
+    "typeorm": "^0.3.20",
     "typeorm-naming-strategies": "^4.1.0"
   },
   "devDependencies": {
@@ -39,6 +41,7 @@
     "eslint-config-next": "13.1.6",
     "postcss": "8.4.5",
     "tailwindcss": "^3.0.15",
+    "ts-node": "^10.9.2",
     "typescript": "4.9.4"
   }
 }

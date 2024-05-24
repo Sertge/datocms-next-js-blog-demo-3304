@@ -8,7 +8,7 @@ export const Query = {
   // me: (_parent: any, _args: any, context: any) => {
   //   return 'its a mee'
   // }
-  listUsers: async (_parent: any, args: { input: FindManyOptions<User> }) => {
+  listUser: async (_parent: any, args: { input: FindManyOptions<User> }) => {
     const interactor = Container.get(ListUsersInteractor)
     return await interactor.execute(args.input)
   },
