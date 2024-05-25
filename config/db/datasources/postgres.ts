@@ -8,10 +8,11 @@ const datasource = new DataSource({
   type: 'postgres',
   url: process.env.DB_URI,
   migrationsRun: true,
+  synchronize: true,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: 'cocina_con_ale',
-  migrations: ['config/db/migrations/*.[jt]s'],
+  //migrations: ['config/db/migrations/*.[jt]s'],
   namingStrategy: new SnakeNamingStrategy(),
   entities: [User],
   logging: ['query', 'migration', 'error']

@@ -1,7 +1,15 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
+export interface UserData {
+    id: string
+    firstName: string
+    lastName: string
+    createdAt: Date
+    updatedAt: Date
+}
+
 @Entity('users')
-export default class User {
+export default class User implements UserData {
   @PrimaryGeneratedColumn('uuid')
     id!: string
   
@@ -17,7 +25,7 @@ export default class User {
     updatedAt!: Date
 }
 
-export declare interface ICreateUserInteractorInput {
+export interface ICreateUserInteractorInput {
   firstName: string
   lastName: string
-} 
+}
