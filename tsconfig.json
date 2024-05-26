@@ -30,7 +30,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "ormconfig.mjs"  ],
   "exclude": [
     "node_modules"
   ]

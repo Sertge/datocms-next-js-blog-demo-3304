@@ -9,7 +9,7 @@ export default class ListUsersInteractor implements IInteractor<FindManyOptions<
     @Inject(DataSource.name) private readonly datasource: DataSource
   ) {}
   async execute (findOptions: FindManyOptions<User>): Promise<User[]> {
-    await this.datasource.synchronize()
+    //await this.datasource.synchronize()
     const userRepository = this.datasource.getRepository(User)
     return await userRepository.find(findOptions)
   }

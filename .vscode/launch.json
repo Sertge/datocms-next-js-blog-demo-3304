@@ -2,6 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "TypeORM: debug migration",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "yarn migration:use"
+    },
+    {
       "name": "Next.js: debug server-side",
       "type": "node-terminal",
       "request": "launch",
