@@ -1,7 +1,8 @@
 import { DataSource } from 'typeorm'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 import User from 'domain/User'
-import {migrations} from 'config/db/migrations/index'
+import Recipe from 'domain/Recipe'
+import { migrations } from 'config/db/migrations/index'
 
 const datasource = new DataSource({
   type: 'postgres',
@@ -14,17 +15,17 @@ const datasource = new DataSource({
   database: process.env.DB_DATABASE,
   migrations: [...migrations],
   namingStrategy: new SnakeNamingStrategy(),
-  entities: [User],
+  entities: [User, Recipe],
   logging: ['query', 'migration', 'error']
 })
 
 datasource.initialize()
-    .then(() => {
-        console.log("Data Source has been initialized!")
-        //datasource.runMigrations()
-    })
-    .catch((err) => {
-        console.error("Error during Data Source initialization", err)
-    })
+  .then(() => {
+    console.log("Data Source has been initialized!")
+    //datasource.runMigrations()
+  })
+  .catch((err) => {
+    console.error("Error during Data Source initialization", err)
+  })
 
 export default datasource

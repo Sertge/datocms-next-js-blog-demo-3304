@@ -1,18 +1,17 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import User from "./User";
 
-@Entity('recipes')
+@Entity('Recipe')
 export default class Recipe {
   @PrimaryGeneratedColumn('uuid')
     id!:string
   
-  @Column({nullable: false})
-    user!: string
+  // @ManyToOne(() => User, (user) => user.recipes)
+  @Column({nullable:false})
+    user!: 'string'
 
   @Column({nullable: false})
     name!: string
-
-  @Column({nullable: true})
-  ingredientAmounts: Array<string>
 
   @CreateDateColumn({nullable: false})
     createdAt!: Date

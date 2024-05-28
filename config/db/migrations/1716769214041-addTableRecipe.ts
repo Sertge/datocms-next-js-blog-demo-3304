@@ -1,7 +1,7 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm"
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class addTableUsers1676599296160 implements MigrationInterface {
-  private readonly tableName = 'User'
+export class AddTableRecipe1716769214041 implements MigrationInterface {
+  private readonly tableName = 'Recipe'
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(new Table({
       name: this.tableName,
@@ -13,15 +13,15 @@ export class addTableUsers1676599296160 implements MigrationInterface {
           default: 'gen_random_uuid()'
         },
         {
-          name: 'first_name',
-          type: 'varchar',
+          name: 'user',
+          type: 'uuid',
           isNullable: false
         },
         {
-          name: 'last_name',
+          name: 'name',
           type: 'varchar',
           isNullable: false
-        },
+        }
       ]
     }))
   }

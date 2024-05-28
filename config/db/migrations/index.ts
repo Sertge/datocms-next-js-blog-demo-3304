@@ -1,4 +1,3 @@
-import { MigrationInterface } from 'typeorm'
 import * as stackMigrations from './migrationsStacker'
 
 export const migrations = new Array<Function>()
