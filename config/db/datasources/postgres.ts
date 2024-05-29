@@ -22,7 +22,6 @@ const datasource = new DataSource({
 datasource.initialize()
   .then(() => {
     console.log("Data Source has been initialized!")
-    //datasource.runMigrations()
   })
   .catch((err) => {
     console.error("Error during Data Source initialization", err)

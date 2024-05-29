@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import Recipe from "./Recipe";
+import type { IRecipe } from "./Recipe";
 
-export interface UserData {
+export interface IUser {
     id: string
     firstName: string
     lastName: string
@@ -10,7 +10,7 @@ export interface UserData {
 }
 
 @Entity('User')
-export default class User implements UserData {
+export default class User implements IUser {
   @PrimaryGeneratedColumn('uuid')
     id!: string
   
@@ -20,8 +20,8 @@ export default class User implements UserData {
   @Column({ nullable: false })
     lastName!: string
 
-  @OneToMany(() => Recipe, (recipe) => recipe.user)
-  recipes: Recipe[]
+  @OneToMany('Recipe', 'user')
+  recipes: IRecipe[]
 
   @CreateDateColumn({ nullable: false })
     createdAt!: Date
