@@ -7,8 +7,13 @@ type Recipe {
 
 input RecipeInput {
   name: String!
+  user: RecipeUserInput
 }
 
 input AddIngredientAmountInput {
   ingredientAmount: ID!
+}
+
+input RecipeUserInput {
+  id: String!
 }

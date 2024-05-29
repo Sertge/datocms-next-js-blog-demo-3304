@@ -1,23 +1,26 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
-import type { IUser } from "./User";
 
-export interface IRecipe {
+export interface IIngredientAmount {
   id: string
-  name: string
+  unitMeasure: string
+  amount: number
   createdAt: Date
   updatedAt: Date
 }
 
-@Entity('Recipe')
-export default class Recipe {
+@Entity('IngredientAmount')
+export default class IngredientAmount {
   @PrimaryGeneratedColumn('uuid')
     id!:string
   
-  @ManyToOne('User', 'recipes')
-    user!: IUser
+  // @ManyToOne('User', 'recipes')
+  //   user!: IUser
 
   @Column({nullable: false})
-    name!: string
+  unitMeasure!: string
+
+  @Column({nullable: false})
+  amount!: number
 
   @CreateDateColumn({nullable: false})
     createdAt!: Date
@@ -26,7 +29,8 @@ export default class Recipe {
     updatedAt!: Date
 }
 
-export interface ICreateRecipeInteractorInput {
+export interface ICreateIngredientAmountInteractorInput {
   name: string
-  user: IUser
+  unitMeasure: string
+  amount: number
 }
