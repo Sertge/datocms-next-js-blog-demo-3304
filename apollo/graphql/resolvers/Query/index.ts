@@ -5,11 +5,13 @@ import ListUsersInteractor from 'interactors/ListUserInteractor'
 import ListRecipeInteractor from 'interactors/ListRecipeInteractor'
 import Container from 'typedi'
 import { FindManyOptions } from 'typeorm'
+import Ingredient from 'domain/Ingredient'
+import GetRecipeByIDInteractor from 'interactors/GetRecipeByIdInteractor'
 
 export const Query = {
-  // me: (_parent: any, _args: any, context: any) => {
-  //   return 'its a mee'
-  // }
+  me: (_parent: any, _args: any, context: any) => {
+    return '06fc4e79-d713-414a-8a3f-4b960649f36b'
+  },
   listUser: async (_parent: any, args: { input: FindManyOptions<User> }) => {
     const interactor = Container.get(ListUsersInteractor)
     return await interactor.execute(args.input)
@@ -21,5 +23,13 @@ export const Query = {
   listRecipe: async (_parent: any, args: { input: FindManyOptions<Recipe>}) => {
     const interactor = Container.get(ListRecipeInteractor)
     return await interactor.execute(args.input)
-  }
+  },
+  getRecipeById: async (_parent:any, args: { id: string }) => {
+    const interactor = Container.get(GetRecipeByIDInteractor)
+    return await interactor.execute(args.id) 
+  },
+  // listIngredient: async (_parent: any, args: { input: FindManyOptions<Ingredient>}) => {
+  //   const interactor = Container.get()
+  //   return await  interactor.execute(args.input)
+  // }
 }

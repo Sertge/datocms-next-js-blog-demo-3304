@@ -15,7 +15,7 @@ const datasource = new DataSource({
   database: process.env.DB_DATABASE,
   migrations: [...migrations],
   namingStrategy: new SnakeNamingStrategy(),
-  entities: [User, Recipe],
+  entities: [User],
   logging: ['query', 'migration', 'error']
 })
 

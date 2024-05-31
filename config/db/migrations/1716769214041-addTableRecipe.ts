@@ -18,6 +18,11 @@ export class AddTableRecipe1716769214041 implements MigrationInterface {
           isNullable: false
         },
         {
+          name: 'ingredientAmounts',
+          type: 'uuid',
+          isNullable: true
+        },
+        {
           name: 'name',
           type: 'varchar',
           isNullable: false

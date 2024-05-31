@@ -1,4 +1,5 @@
 type IngredientAmount {
+  id: ID!
   ingredient: Ingredient!
   amount: Int!
   unitMeasure: UnitOfMeasurement!

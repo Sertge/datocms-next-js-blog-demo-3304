@@ -3,5 +3,6 @@ type Query {
   listUser: [User!]
   getUserById(id: ID!): User
   listRecipe: [Recipe!]
+  getRecipeById(id: ID!): Recipe
   listIngredient: [Ingredient!]
 }

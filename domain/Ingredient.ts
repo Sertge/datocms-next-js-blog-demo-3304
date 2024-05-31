@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import type { IIngredientAmount } from "./IngredientAmount";
 
 export interface IIngredient {
   id: string
@@ -14,8 +15,8 @@ export default class Ingredient {
   @PrimaryGeneratedColumn('uuid')
     id!:string
   
-  // @ManyToOne('User', 'recipes')
-  //   user!: IUser
+  @ManyToOne('IngredientAmount', 'ingredients')
+    ingredientAmount!: IIngredientAmount
 
   @Column({nullable: false})
     name!: string

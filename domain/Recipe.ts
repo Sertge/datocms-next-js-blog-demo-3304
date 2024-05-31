@@ -1,5 +1,6 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 import type { IUser } from "./User";
+import type { IIngredientAmount } from "./IngredientAmount";
 
 export interface IRecipe {
   id: string
@@ -18,6 +19,9 @@ export default class Recipe {
 
   @Column({nullable: false})
     name!: string
+
+  @OneToMany('IngredientAmount', 'recipe')
+    ingredientAmounts: IIngredientAmount[]
 
   @CreateDateColumn({nullable: false})
     createdAt!: Date

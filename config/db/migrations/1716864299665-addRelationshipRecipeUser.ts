@@ -7,7 +7,15 @@ export class AddRelationshipRecipeUser1716864299665 implements MigrationInterfac
   private readonly recipeTable = new Table(Recipe)
   private readonly userTable = new Table(User)
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.createForeignKey(this.recipeTable.name, new TableForeignKey({columnNames: ["user"], referencedColumnNames: ["id"], referencedTableName: this.userTable.name, name:this.Pkname}))
+    await queryRunner.createForeignKey(
+      this.recipeTable.name,
+      new TableForeignKey({
+        columnNames: ["user"],
+        referencedColumnNames: ["id"],
+        referencedTableName: this.userTable.name,
+        name:this.Pkname
+      })
+    )
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
