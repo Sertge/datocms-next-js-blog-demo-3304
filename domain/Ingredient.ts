@@ -15,9 +15,8 @@ export default class Ingredient {
   @PrimaryGeneratedColumn('uuid')
     id!:string
   
-  @ManyToOne('IngredientAmount', 'ingredients')
-    ingredientAmount!: IIngredientAmount
-
+  @OneToMany('IngredientAmount', 'ingredients')
+    ingredientAmounts!: IIngredientAmount[]
   @Column({nullable: false})
     name!: string
 
@@ -26,6 +25,9 @@ export default class Ingredient {
 
   @Column({nullable: false})
   unitMeasure!: string
+
+  @Column({nullable:false})
+  lossPercent!: number
 
   @CreateDateColumn({nullable: false})
     createdAt!: Date
@@ -37,5 +39,6 @@ export default class Ingredient {
 export interface ICreateIngredientInteractorInput {
   name: string
   price: number
+  lossPercent: number
   unitMeasure: string
 }

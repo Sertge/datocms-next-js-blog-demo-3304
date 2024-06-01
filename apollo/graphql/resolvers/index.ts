@@ -1,2 +1,5 @@
 export { Mutation } from './Mutation'
 export { Query } from './Query'
+export { User } from './User'
+export { Recipe } from './Recipe'
+export { IngredientAmount } from './IngredientAmount'

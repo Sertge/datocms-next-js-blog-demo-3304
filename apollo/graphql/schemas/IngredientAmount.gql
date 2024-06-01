@@ -7,8 +7,16 @@ type IngredientAmount {
 }
 
 input IngredientAmountInput {
-  ingredient: ID!
+  ingredient: RecipeAmountIngredientInput!
   amount: Int!
   unitMeasure: UnitOfMeasurement!
-  recipe: ID!
+  recipe: RecipeIngredientInput!
+}
+
+input RecipeAmountIngredientInput {
+  id: String!
+}
+
+input RecipeIngredientInput {
+  id: String!
 }

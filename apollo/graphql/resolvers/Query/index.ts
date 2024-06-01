@@ -7,6 +7,7 @@ import Container from 'typedi'
 import { FindManyOptions } from 'typeorm'
 import Ingredient from 'domain/Ingredient'
 import GetRecipeByIDInteractor from 'interactors/GetRecipeByIdInteractor'
+import ListIngredientInteractor from 'interactors/ListIngredientInteractor'
 
 export const Query = {
   me: (_parent: any, _args: any, context: any) => {
@@ -28,8 +29,8 @@ export const Query = {
     const interactor = Container.get(GetRecipeByIDInteractor)
     return await interactor.execute(args.id) 
   },
-  // listIngredient: async (_parent: any, args: { input: FindManyOptions<Ingredient>}) => {
-  //   const interactor = Container.get()
-  //   return await  interactor.execute(args.input)
-  // }
+  listIngredient: async (_parent: any, args: { input: FindManyOptions<Ingredient>}) => {
+    const interactor = Container.get(ListIngredientInteractor)
+    return await  interactor.execute(args.input)
+  }
 }

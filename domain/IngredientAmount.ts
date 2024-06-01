@@ -18,7 +18,7 @@ export default class IngredientAmount {
   @ManyToOne('Recipe', 'ingredientAmounts')
     recipe!: IRecipe
 
-  @OneToMany('Ingredient', 'ingredientAmount')
+  @ManyToOne('Ingredient', 'ingredientAmount')
     ingredient: IIngredient
 
   @Column({nullable: false})
@@ -35,7 +35,8 @@ export default class IngredientAmount {
 }
 
 export interface ICreateIngredientAmountInteractorInput {
-  name: string
   unitMeasure: string
-  amount: number
+  amount: number,
+  recipe: IRecipe
+  ingredient: IIngredient
 }

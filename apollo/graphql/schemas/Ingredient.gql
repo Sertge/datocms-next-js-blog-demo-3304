@@ -2,8 +2,7 @@ directive @generateUDFResolvers on FIELD_DEFINITION | OBJECT
 type Ingredient @generateUDFResolvers{
   id: ID!
   name: String!
-  unitPrice: Int!
-  unitAmount: Int!
+  price: Float!
   lossPercent: Int!
   unitMeasure: UnitOfMeasurement!
 }
@@ -16,7 +15,8 @@ enum UnitOfMeasurement {
 }
 
 input IngredientInput {
-  ingredient: ID!
+  name: String!
   unitMeasure: UnitOfMeasurement!
   price: Float!
+  lossPercent: Int
 }

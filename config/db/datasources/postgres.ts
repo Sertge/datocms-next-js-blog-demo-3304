@@ -3,6 +3,8 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 import User from 'domain/User'
 import Recipe from 'domain/Recipe'
 import { migrations } from 'config/db/migrations/index'
+import Ingredient from 'domain/Ingredient'
+import IngredientAmount from 'domain/IngredientAmount'
 
 const datasource = new DataSource({
   type: 'postgres',
@@ -15,7 +17,7 @@ const datasource = new DataSource({
   database: process.env.DB_DATABASE,
   migrations: [...migrations],
   namingStrategy: new SnakeNamingStrategy(),
-  entities: [User],
+  entities: [User, Recipe, Ingredient, IngredientAmount],
   logging: ['query', 'migration', 'error']
 })
 

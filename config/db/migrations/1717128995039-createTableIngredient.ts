@@ -13,13 +13,19 @@ export class CreateTableIngredient1717128995039 implements MigrationInterface {
         default: 'gen_random_uuid()'
       },
       {
-        name: 'unit',
+        name:'name',
         type: 'varchar',
+        isNullable: false,
+        isUnique: true
+      },
+      {
+        name: 'price',
+        type: 'int8',
         isNullable: false
       },
       {
-        name: 'amount',
-        type: 'int8',
+        name: 'lossPercent',
+        type: 'int4',
         isNullable: false
       },
       {
@@ -44,8 +50,8 @@ export class CreateTableIngredient1717128995039 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable(this.tableName)
     await queryRunner.dropForeignKey(this.ingredientAmountTable, this.PkName)
+    await queryRunner.dropTable(this.tableName)
   }
 
 }

@@ -10,10 +10,6 @@ input RecipeInput {
   user: RecipeUserInput
 }
 
-input AddIngredientAmountInput {
-  ingredientAmount: ID!
-}
-
 input RecipeUserInput {
   id: String!
 }

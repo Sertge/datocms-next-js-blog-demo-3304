@@ -54,8 +54,8 @@ export class CreateTableIngredientAmounts1717125251587 implements MigrationInter
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable(this.tableName)
     await queryRunner.dropForeignKey(this.table, this.PkName)
+    await queryRunner.dropTable(this.tableName)
   }
 
 }
