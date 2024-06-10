@@ -29,6 +29,12 @@ export default class Ingredient {
   @Column({nullable:false})
   lossPercent!: number
 
+  @Column({nullable: false, type: 'decimal', precision: 2})
+  packSize!: number
+
+  @Column({nullable: false})
+  packPrice!: number
+
   @CreateDateColumn({nullable: false})
     createdAt!: Date
 

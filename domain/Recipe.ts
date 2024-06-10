@@ -23,6 +23,18 @@ export default class Recipe {
   @OneToMany('IngredientAmount', 'recipe')
     ingredientAmounts: IIngredientAmount[]
 
+  @Column({nullable:true, default: true})
+    isExpandable: boolean
+
+  @Column({nullable:false})
+    servings!: number
+
+  @Column({nullable: false})
+    prepTime: number
+
+  @Column({nullable: true, default: 0})
+    estPrice: number
+
   @CreateDateColumn({nullable: false})
     createdAt!: Date
 

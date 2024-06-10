@@ -5,6 +5,8 @@ type Ingredient @generateUDFResolvers{
   price: Float!
   lossPercent: Int!
   unitMeasure: UnitOfMeasurement!
+  packPrice: Int!
+  packSize: Float!
 }
 
 enum UnitOfMeasurement {

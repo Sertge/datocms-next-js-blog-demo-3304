@@ -22,10 +22,10 @@ export default class IngredientAmount {
     ingredient: IIngredient
 
   @Column({nullable: false})
-  unitMeasure!: string
+    unitMeasure!: string
 
   @Column({nullable: false})
-  amount!: number
+    amount!: number
 
   @CreateDateColumn({nullable: false})
     createdAt!: Date

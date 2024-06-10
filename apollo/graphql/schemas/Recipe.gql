@@ -3,11 +3,20 @@ type Recipe {
   user: User!
   name: String!
   ingredientAmounts: [IngredientAmount!]
+  isExpandable: Boolean!
+  servings: Int!
+  prepTime: Float!
+  estPrice: Float
 }
 
 input RecipeInput {
   name: String!
   user: RecipeUserInput
+  servings: Int!
+  isExpandable: Boolean!
+  prepHours: Int!
+  prepMinutes: Int!
+  estPrice: Float!
 }
 
 input RecipeUserInput {
