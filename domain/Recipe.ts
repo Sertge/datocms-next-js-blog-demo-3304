@@ -29,7 +29,7 @@ export default class Recipe {
   @Column({nullable:false})
     servings!: number
 
-  @Column({nullable: false})
+  @Column({nullable: false, type:'decimal', precision:2})
     prepTime: number
 
   @Column({nullable: true, default: 0})
