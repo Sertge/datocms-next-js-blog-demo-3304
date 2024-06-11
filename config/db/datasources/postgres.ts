@@ -1,8 +1,8 @@
 import { DataSource } from 'typeorm'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
+import { migrations } from 'config/db/migrations/index'
 import User from 'domain/User'
 import Recipe from 'domain/Recipe'
-import { migrations } from 'config/db/migrations/index'
 import Ingredient from 'domain/Ingredient'
 import IngredientAmount from 'domain/IngredientAmount'
 

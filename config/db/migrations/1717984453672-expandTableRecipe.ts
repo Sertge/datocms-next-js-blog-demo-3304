@@ -2,13 +2,13 @@ import Recipe from "domain/Recipe";
 import { MigrationInterface, QueryRunner, Table, TableColumn } from "typeorm";
 
 export class ExpandTableRecipe1717984453672 implements MigrationInterface {
-    private readonly ingredientTable = new Table(Recipe)
+    private readonly recipeTable = new Table(Recipe)
     private readonly newColumns = [
         new TableColumn({
             name:'isExpandable',
             type: 'int4',
             isNullable: false,
-            isUnique: true
+            isUnique: true,
         }),
         new TableColumn({
             name:'servings',
@@ -30,9 +30,11 @@ export class ExpandTableRecipe1717984453672 implements MigrationInterface {
         })
     ]
     public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.addColumns(this.recipeTable, this.newColumns)
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropColumns(this.recipeTable, this.newColumns)
     }
 
 }
