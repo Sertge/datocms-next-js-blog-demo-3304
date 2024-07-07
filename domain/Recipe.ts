@@ -29,10 +29,10 @@ export default class Recipe {
   @Column({nullable:false})
     servings!: number
 
-  @Column({nullable: false, type:'decimal', precision:2})
+  @Column({nullable: true, type:'decimal', precision:2})
     prepTime: number
 
-  @Column({nullable: true, default: 0})
+  @Column({nullable: false, default: 0})
     estPrice: number
 
   @CreateDateColumn({nullable: false})

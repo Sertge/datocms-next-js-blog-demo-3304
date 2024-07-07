@@ -7,7 +7,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "fauna:export": "node --experimental-modules faunadb.mjs",
-    "migration:create": "typeorm migration:create"
+    "migration:create": "typeorm migration:create",
+    "migration:generate": "npx typeorm-ts-node-esm migration:generate -d ./config/db/datasources/postgres.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.3.3",

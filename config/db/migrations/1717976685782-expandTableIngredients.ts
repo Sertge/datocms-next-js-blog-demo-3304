@@ -9,13 +9,13 @@ export class ExpandTableIngredients1717976685782 implements MigrationInterface {
             name:'packPrice',
             type: 'int4',
             isNullable: false,
-            isUnique: true
+            default: 2500
         }),
         new TableColumn({
             name:'packSize',
             type: 'float',
             isNullable: false,
-            isUnique: true
+            default: 1.00
         })
     ]
     public async up(queryRunner: QueryRunner): Promise<void> {

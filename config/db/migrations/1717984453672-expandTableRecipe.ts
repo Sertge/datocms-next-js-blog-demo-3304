@@ -6,27 +6,26 @@ export class ExpandTableRecipe1717984453672 implements MigrationInterface {
     private readonly newColumns = [
         new TableColumn({
             name:'isExpandable',
-            type: 'int4',
+            type: 'boolean',
             isNullable: false,
-            isUnique: true,
+            default: false
         }),
         new TableColumn({
             name:'servings',
-            type: 'boolean',
+            type: 'int4',
             isNullable: false,
-            isUnique: true
+            default: 1
         }),
         new TableColumn({
             name:'prepTime',
             type: 'float',
-            isNullable: false,
-            isUnique: true
+            isNullable: true,
         }),
         new TableColumn({
             name:'estPrice',
             type: 'float',
             isNullable: false,
-            isUnique: true
+            default: 0
         })
     ]
     public async up(queryRunner: QueryRunner): Promise<void> {

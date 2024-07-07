@@ -6,6 +6,9 @@ export interface IIngredient {
   name: string
   price: number
   unitMeasure: string
+  lossPercent: number
+  packSize: number
+  packPrice: number
   createdAt: Date
   updatedAt: Date
 }
@@ -29,10 +32,10 @@ export default class Ingredient {
   @Column({nullable:false})
   lossPercent!: number
 
-  @Column({nullable: false, type: 'decimal', precision: 2})
+  @Column({nullable: false, type: 'decimal', precision: 2, default: 1.00})
   packSize!: number
 
-  @Column({nullable: false})
+  @Column({nullable: false, default: 2500})
   packPrice!: number
 
   @CreateDateColumn({nullable: false})
