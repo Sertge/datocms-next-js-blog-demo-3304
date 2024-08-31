@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import type { IIngredientAmount } from "./IngredientAmount";
 
 export interface IIngredient {
@@ -16,33 +16,34 @@ export interface IIngredient {
 @Entity('Ingredient')
 export default class Ingredient {
   @PrimaryGeneratedColumn('uuid')
-    id!:string
-  
-  @OneToMany('IngredientAmount', 'ingredients')
-    ingredientAmounts!: IIngredientAmount[]
-  @Column({nullable: false})
-    name!: string
+  id!: string
 
-  @Column({nullable: false})
+  @OneToMany('IngredientAmount', 'ingredients')
+  ingredientAmounts!: IIngredientAmount[]
+
+  @Column({ nullable: false })
+  name!: string
+
+  @Column({ nullable: false })
   price!: number
 
-  @Column({nullable: false})
+  @Column({ nullable: false })
   unitMeasure!: string
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   lossPercent!: number
 
-  @Column({nullable: false, type: 'decimal', precision: 2, default: 1.00})
+  @Column({ nullable: false, type: 'decimal', precision: 2, default: 1.00 })
   packSize!: number
 
-  @Column({nullable: false, default: 2500})
+  @Column({ nullable: false, default: 2500 })
   packPrice!: number
 
-  @CreateDateColumn({nullable: false})
-    createdAt!: Date
+  @CreateDateColumn({ nullable: false })
+  createdAt!: Date
 
-  @UpdateDateColumn({nullable: false})
-    updatedAt!: Date
+  @UpdateDateColumn({ nullable: false })
+  updatedAt!: Date
 }
 
 export interface ICreateIngredientInteractorInput {

@@ -2,31 +2,31 @@ import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, Up
 import type { IRecipe } from "./Recipe";
 
 export interface IUser {
-    id: string
-    firstName: string
-    lastName: string
-    createdAt: Date
-    updatedAt: Date
+  id: string
+  firstName: string
+  lastName: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 @Entity('User')
 export default class User implements IUser {
   @PrimaryGeneratedColumn('uuid')
-    id!: string
-  
-  @Column({ nullable: false })
-    firstName!: string
+  id!: string
 
   @Column({ nullable: false })
-    lastName!: string
+  firstName!: string
+
+  @Column({ nullable: false })
+  lastName!: string
 
   @OneToMany('Recipe', 'user')
   recipes: IRecipe[]
 
   @CreateDateColumn({ nullable: false })
-    createdAt!: Date
+  createdAt!: Date
   @UpdateDateColumn({ nullable: false })
-    updatedAt!: Date
+  updatedAt!: Date
 }
 
 export interface ICreateUserInteractorInput {
